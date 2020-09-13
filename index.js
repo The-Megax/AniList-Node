@@ -53,8 +53,8 @@ module.exports = class AniList {
         if (typeof amount !== "number") { throw new Error("Amount is not a number"); }
         
         var search = {
-            "anime": "media (type: ANIME, search: $search) { id title { romaji english native userPreferred } }",
-            "manga": "media (type: MANGA, search: $search) { id title { romaji english native userPreferred } }",
+            "anime": "media (type: ANIME, search: $search) { id title { romaji english native userPreferred } coverImage { large medium } status startDate { year month day } endDate { year month day } }",
+            "manga": "media (type: MANGA, search: $search) { id title { romaji english native userPreferred } coverImage { large medium } status startDate { year month day } endDate { year month day } }",
             "char": "characters (search: $search) { id name { english: full } }" ,
             "staff": "staff (search: $search) { id name { english: full } }",
             "studio": "studios (search: $search) { id name }"
